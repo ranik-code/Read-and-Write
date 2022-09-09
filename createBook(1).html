@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="createBook.css">
+</head>
+<body>
+    <form action="editor.html" method="post"></form>
+        <div class="grid-container">
+            <div class="wrapper" >
+                <input class="choose-file-btn" type="file" id="photo" accept="image/*" onchange="preview_image(event)">
+                <!-- <button id="select">Book Cover</button><br> -->
+                <img class="user-image" src="BookCover.png" alt="user-image" id="output_image"/>
+                <label id="UpProgress"></label>
+            </div>
+            <div>
+                <div class="story-details">
+                    <h1><u>Story Details</u></h1>
+                    <label><b>Title</b></label><br>
+                    <input type="text" id="story-title" class="input-box1" required><br><br>
+                    <label><b>Description</b></label><br>
+                    <textarea type="text" id="story-descrp" class="input-box2" required></textarea><br><br>
+                    <label><b>Genre</b></label><br>
+                    <input type="text" id="story-genre" class="input-box3"><br><br>
+                    <label><b>Tags</b></label><br>
+                    <input type="text" id="story-tags" class="input-box4"><br><br>
+                </div>
+            <button type="button" id="submit-btn" onclick="uploadData()">Next</button>
+            </div>    
+        </div>     
+    </form>
+</body>
+
+     <!-- The core Firebase JS SDK is always required and must be listed first -->
+     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+     <!-- TODO: Add SDKs for Firebase products that you want to use
+          https://firebase.google.com/docs/web/setup#available-libraries -->
+     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+     <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <!-- Our script must be loaded after firebase references -->
+    <script src="firebase.js"></script>
+    <script src="createBook.js"></script>
+
+</html>

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/177c6308e7.js" crossorigin="anonymous"></script>
+    <title>Chapter</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=Outfit&display=swap');
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        h1 a {
+            margin: 0 1em;
+            text-decoration: none;
+            color: #551a8b;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .chapter {
+            margin: 1% auto;
+            width: 95%;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .upper-btn {
+            position: relative;
+            bottom: 30px;
+            right: 2%;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="b-name">
+        <h1><a href="#">
+                <!--Fetch book name here-->
+                <span id="book-title"></span>
+            </a>
+        </h1>
+    </div>
+    <div style="float: right;" class="upper-btn">
+        <a href="javascript:window.open('','_self').close();" style="text-decoration: none;"><b>EXIT</b> <i class="fas fa-sign-out-alt"></i></a>
+    </div>
+    <div class="chapter">
+        <h2><!--Fetch Chapter name here-->
+            <span id="chapter-name"></span>
+        </h2>
+        <hr>
+        <div>
+            <!--Fetch paragraph here-->
+            <!-- don't delete this -->&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <!-- till this -->
+            <div id="chapter-content">
+
+            </div> 
+
+        </div>
+        <hr>
+    </div>
+    <div style="margin-bottom: 10%;" class="lower-btn">
+
+        <a href="#" style="float: left;position: relative;left: 2%;text-decoration: none;" id="previous" onclick="previous()"><i
+                class="fas fa-arrow-circle-left"></i> <b>PREVIOUS</b></i></a>
+        <a href="#" style="float: right;position: relative;right: 2%;text-decoration: none;" id="next" onclick="next()"><b>NEXT</b> <i
+                class="fas fa-arrow-alt-circle-right"></i></a>
+
+    </div>
+
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+
+    <script src="file:///C:/Users/Lenovo/Documents/test-firebase/firebase.js"></script>
+    <script src="chapter.js"></script>
+</body>
+
+</html>

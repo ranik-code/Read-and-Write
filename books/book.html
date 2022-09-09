@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="book.css">
+</head>
+<body>
+    <div class="topnav">
+        <a href="#" class="nav-item">Wrinkled Pages</a>
+        <a href="homepage.html">Home</a>
+        <a href="#" id="search" class="nav-item">
+          <input class="searchInput"type="text" id="searchBox" placeholder="Search">
+                <button class="searchButton" href="#">
+                    <i class="material-icons">
+                        search
+                    </i>
+                </button>
+        </a>
+        
+        <div class="topnav-right">
+          <a href="createBook.html" class="nav-item">Write</a>
+          <a href="#" class="nav-item"><i class="fa fa-bell"></i></a>
+    
+          <div class="dropdown">
+            <button class="dropbtn" id="profile"></button>
+            <div class="dropdown-content" style="right:0">
+              <a href="profile2.html">Profile</a>
+              <a href="mystories.html">My Books</a>
+              <a href="#">Settings</a>
+              <a href="#">Theme</a>
+              <a href="#">Need Help?</a>
+              <a href="#" onclick="logout()">Log Out</a>
+            </div>
+          </div> 
+        </div>
+    </div>
+
+
+    <div class="book">
+        <div class="book-cover" id="book-cover">
+
+        </div>
+        <div class="Book-Name">
+          <p id="book-title">
+            
+          </p>
+          <button class="button" onclick="startReading()">Start Reading</button>
+    
+        </div>
+        <div class="description" id="book-description">  
+          <h5 class="book-details">Book Description</h5>
+        </div>
+        <div class="table-of-contents hidden-xxs">
+          <div class="table-of-contents__header"><b>Table of contents</b> </div>
+          <div class="story-parts">
+            <ul id="chapters-list">
+
+            </ul>
+          </div>
+        </div>    
+    
+    </div>
+
+
+
+    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+
+    <script src="file:///C:/Users/Lenovo/Documents/test-firebase/firebase.js"></script>
+    <script src="book.js"></script>
+    <script src="file:///C:/Users/Lenovo/Documents/test-firebase/logOut.js"></script>
+</body>
+</html>

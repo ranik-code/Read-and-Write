@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="book-details.css">
+    
+</head>
+
+<body>
+    <div class="topnav">
+        <a href="#" class="nav-item">Wrinkled Pages</a>
+        
+        <div class="topnav-right">
+          <a href="file:///C:/Users/Lenovo/Documents/test-firebase/mystories.html" class="nav-item">Cancel</a>
+          <a href="#" class="nav-item" onclick="uploadData()">Save</a>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="grid-container">
+        <div class="wrapper" id="book-cover">
+            <input class="choose-file-btn" type="file" id="photo" accept="image/*" onchange="preview_image(event)">
+            
+        </div>
+
+        <div class="s-cont">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle123-btn" onclick="bookDetails()">Book Details</button>
+                <button type="button" class="toggle123-btn" onclick="chapterList()">Table of Contents</button>
+            </div>
+
+            <div id="book-details" class="info">
+                
+                    <div class="story-details">
+                    
+                        <label><b>Title</b></label><br>
+                        <input type="text" id="story-title" class="input-box1" required><br><br>
+                        <label><b>Description</b></label><br>
+                        <textarea type="text" id="story-descrp" class="input-box2" required></textarea><br><br>
+                        <label for="Genre" id = "dropdown"><b>Genre</b></label>
+                        <br>
+                        <select class="input-box3" name="genre" id="story-genre">
+                            <option value="choosegenre">Choose Genre </option>
+                            <option value="Action">Action</option>
+                            <option value="Adventure">Adventure</option>
+                            <option value="Classics">Classics</option>
+                            <option value="Comics">Comics</option>
+                            <option value="Coming of the Age">Coming of the Age</option>
+                            <option value="Crime">Crime</option>
+                            <option value="Detective">Detective</option>
+                            <option value="Drama">Drama</option>
+                            <option value="Fantasy">Fantasy</option>
+                            <option value="Horror">Horror</option>
+                            <option value="Mystery">Mystery</option>
+                            <option value="Paranormal Romance">Paranormal Romance</option>
+                            <option value="Political Thriller">Political Thriller</option>
+                            <option value="Psychological">Psychological</option>
+                            <option value="Romance">Romance</option>
+                            <option value="RomCom">RomCom</option>
+                            <option value="Thriller">Thriller</option>
+                        </select><br><br>
+                        <label><b>Tags</b></label><br>
+                        <input type="text" id="story-tags" class="input-box4"><br><br>
+                    </div>          
+            </div>
+            <div id="chapter-list" class="info">
+                <button class="newChap" onclick="newChapter()">Add New Chapter+</button>
+                <ul id="chap-list"></ul>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+
+        var x = document.getElementById("book-details");
+        var y = document.getElementById("chapter-list");
+        var z = document.getElementById("btn");
+
+        function chapterList() {
+            x.style.left = "-1000px";
+            y.style.left = "1px";
+            z.style.left = "47%";
+        }
+
+        function bookDetails() {
+            x.style.left = "0px";
+            y.style.left = "1000px";
+            z.style.left = "0%";
+        }
+
+    </script>
+
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+
+    <script src="file:///C:/Users/Lenovo/Documents/test-firebase/firebase.js"></script>
+    <script src="book-details.js"></script>
+    <script src="file:///C:/Users/Lenovo/Documents/test-firebase/logOut.js"></script>
+</body>
+</html>
+</body>
+
+</html>

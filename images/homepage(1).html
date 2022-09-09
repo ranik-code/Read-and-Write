@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="homepage.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  <title>Wrinkled Pages 02</title>
+</head>
+
+<body>
+
+
+<!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="d-flex flex-grow-1">
+      <span class="w-100 d-lg-none d-block">
+        <!-- hidden spacer to center brand on mobile -->
+      </span>
+      <a class="navbar-brand name" href="#">
+        Wrinkled Pages
+      </a>
+      <div class="dropdown">
+        <a href="javascript:void(0)" class="dropbtn">Browse</a>
+        <div class="dropdown-content">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+
+
+
+      <form id="form" role="search">
+        <input type="search" id="query" name="q" placeholder="Search..." aria-label="Search through site content">
+        <button>Search</button>
+      </form>
+      <div class="w-100 text-right">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#myNavbar7">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    <div class="collapse navbar-collapse flex-grow-1 text-right">
+      <ul class="navbar-nav ml-auto flex-nowrap">
+        <li class="nav-item">
+          <a href="C:\Users\SAUS\OneDrive\Desktop\Web Development\Front Page\index.html" class="nav-link"> <img class="image"src="Home1-removebg-preview.png" alt=""> Home</a>
+        </li>
+        <li class="nav-item">
+          <a href="createBook.html" class="nav-link"><img  class="image" src="pen1-removebg-preview.png"/> Write</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"><img  class="image" src="Share_Icon-removebg-preview.png" />Share</a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"><img class="image" src="Notification-removebg-preview.png" /></a>
+        </li>
+        <li class="nav-item">
+          <div class="dropdown">
+          <a href="#" class="nav-link" id="UserNameInitials"></a>
+          <div class="dropdown-content">
+            <a class="profile" href="#">Profile</a>
+            <a href="#">Settings</a>
+            <a href="#">Dark Mode</a>
+            <a href="#"><button class="btn btn-danger" onclick="logout()">Logout</button></a>
+            <a href="#">Need Help?</a>
+          </div>
+        </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  
+  <!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides" style="display: none;">
+    <a href="https://allnovel.net/harry-potter-and-the-deathly-hallows-harry-potter-7.html">
+    <img src="img1.jpg">
+    <div class="text">Book-1</div>
+    </a>
+  </div>
+
+  <div class="mySlides" style="display: block;">
+    <a href="https://allnovel.net/harry-potter-and-the-deathly-hallows-harry-potter-7.html">
+    <img src="img2.jpg">
+    <div class="text">Book-2</div>
+    </a>
+  </div>
+
+  <div class="mySlides" style="display: none;">
+    <a href="https://allnovel.net/harry-potter-and-the-deathly-hallows-harry-potter-7.html">
+    <img src="img3.jpg">
+    <div class="text">Book-3</div>
+    </a>
+  </div>
+
+<br>
+
+<!-- The dots/circles -->
+<div class="dots" style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot active" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+</div>
+
+
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 5000); // Change image every 5 seconds
+}
+</script>
+
+
+</div>
+</body>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+    https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+
+<script src="firebase.js"></script>
+<script src="homepage.js"></script>
+</html>

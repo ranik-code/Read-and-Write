@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>HomePage</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="homepage.css">
+<body>
+
+  <div class="topnav">
+    <a href="#" class="nav-item">Wrinkled Pages</a>
+    <a class="active" href="homepage.html">Home</a>
+    <a href="#" id="search" class="nav-item">
+      <input class="searchInput" type="text" id="searchBox" placeholder="Search">
+            <button class="searchButton" onclick="getSearch()">
+                <i class="material-icons">
+                    search
+                </i>
+            </button>
+    </a>
+    
+    <div class="topnav-right">
+      <a href="createBook.html" class="nav-item">Write</a>
+      <a href="#" class="nav-item"><i class="fa fa-bell"></i></a>
+
+      <div class="dropdown">
+        <button class="dropbtn nav-item"  id="profile"></button>
+        <div class="dropdown-content" style="right:0">
+          <a href="profile2.html">Profile</a>
+          <a href="mystories.html">My Books</a>
+          <a href="#">Settings</a>
+          <a href="#">Theme</a>
+          <a href="#">Need Help?</a>
+          <a href="#" onclick="logout()">Log Out</a>
+        </div>
+      </div> 
+    </div>
+  </div>
+
+<!-- Sidebar -->
+<nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left" id="mySidebar" action="filter.html">
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
+    <i class="fa fa-remove"></i>
+  </a>
+  <h4 class="w3-bar-item"><b>Browse</b></h4>
+  <a class="w3-bar-item w3-button w3-hover-black" id="Action" onclick="getAction()">Action</a>
+  <a class="w3-bar-item w3-button w3-hover-black" id="Adventure" onclick="getAdventure()">Adventure</a>
+  <a class="w3-bar-item w3-button w3-hover-black" id="Classics"onclick="getClassics()">Classics</a>
+  <a class="w3-bar-item w3-button w3-hover-black" id="Comic books" onclick="getComicBooks()">Comic Books</a>
+  <a class="w3-bar-item w3-button w3-hover-black"id="Coming of the age" onclick="getComingoftheAge()">Coming of the Age</a>
+  <a class="w3-bar-item w3-button w3-hover-black"id="Crime" onclick="getCrime()">Crime</a>
+  <a class="w3-bar-item w3-button w3-hover-black" id="Detective"onclick="getDetective()">Detective</a>
+  <a class="w3-bar-item w3-button w3-hover-black"id="Drama" onclick="getDrama()">Drama</a>
+  <a class="w3-bar-item w3-button w3-hover-black"id="Fantasy" onclick="getFantasy()">Fantasy</a>
+  <a class="w3-bar-item w3-button w3-hover-black"id="Horror"onclick="getHorror()" >Horror</a>
+  <a class="w3-bar-item w3-button w3-hover-black" id="Mystery"onclick="getMystery()">Mystery</a>
+  <a class="w3-bar-item w3-button w3-hover-black"id="Paranormalromance" onclick="getParanormalRomance()">Paranormal Romance</a>
+  <a class="w3-bar-item w3-button w3-hover-black"id="Political thriller"onclick="getPoliticalthriller()" >Political thriller</a>
+  <a class="w3-bar-item w3-button w3-hover-black"id="Psychological" onclick="getPsychological()">Psychological</a>
+  <a class="w3-bar-item w3-button w3-hover-black"id="Romance" onclick="getRomance()">Romance</a>
+  <a class="w3-bar-item w3-button w3-hover-black"id="Romcom"onclick="getRomcom()" >RomCom</a>
+  <a class="w3-bar-item w3-button w3-hover-black"id="Thriller"onclick="getThriller()" >Thriller</a>
+</nav>
+
+  <!-- Slideshow -->
+  <div class="w3-container">
+    <div class="w3-display-container mySlides">
+      <img src="images/img1.jpg" style="width:100%"> 
+    </div>
+    <div class="w3-display-container mySlides">
+      <img src="images/img2.png" style="width:100%">
+    </div>
+    <div class="w3-display-container mySlides">
+      <img src="images/img3.png" style="width:100%">
+    </div>
+
+    <!-- Slideshow next/previous buttons -->
+    <div class="w3-container2 w3-dark-grey w3-padding w3-xlarge">
+      <div class="w3-left" onclick="plusDivs(-1)"><i class="fa fa-arrow-circle-left w3-hover-text-teal"></i></div>
+      <div class="w3-right" onclick="plusDivs(1)"><i class="fa fa-arrow-circle-right w3-hover-text-teal"></i></div>
+    
+      <div class="w3-center">
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+        <span class="w3-tag demodots w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+      </div>
+    </div>
+  </div>
+<br>
+<br>
+  <!-- Recommendations -->
+  <div class="w3-row-padding w3-center" id="recommendations">
+    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Recommendations!</span>
+    <p><br><br><br><br><br></p>
+  </div>
+
+  <!-- Trending -->
+  <div class="w3-row-padding w3-center" id="trending">
+    <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Trending!</span>
+    <p><br><br><br><br><br></p>
+  </div>
+
+
+  <!-- Grid -->
+  <div class="w3-row-padding" id="about">
+    <div class="w3-center w3-padding-64">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Who We Are</span>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <div class="w3-container">
+          <h3>Ananya Verma</h3>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <div class="w3-container">
+          <h3>Monalika Pandey</h3>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <div class="w3-container">
+          <h3>Rani Kumrawat</h3>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <div class="w3-container">
+          <h3>Shrasti Baghel</h3>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <div class="w3-container">
+          <h3>Lalit Mujalde</h3>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="w3-third w3-margin-bottom">
+      <div class="w3-card-4">
+        <div class="w3-container">
+          <h3>Himanshu Jamod</h3>
+          <p>Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <br><br><br>
+    <!-- Contact Us-->
+    <div class="w3-row-padding w3-center" id="contactUs">
+      <span class="w3-xlarge w3-bottombar w3-border-dark-grey w3-padding-16">Contact Us</span>
+      <br>
+      <div class="container">
+        <div class="wrapper">
+          <div class="company-info">
+            <h3>CONTACT US!</h3>
+            <ul>
+              <li><i class="fa fa-road"></i> 44 Street no.,Vasanat Vihar Colony,Delhi</li>
+              <li><i class="fa fa-phone"></i> (555) 555-5555</li>
+              <li><i class="fa fa-envelope"></i> wrinkledpage@acme.test</li>
+            </ul>
+          </div>
+          <div class="contact">
+            <h3>Email Us</h3>
+            <div class="alert">Your message has been sent</div>
+            <form id="contactForm">
+              <p>
+                <label>Firstname</label>
+                <input type="text" name="firstname" id="firstname" required>
+              </p>
+              <p>
+                <label>Lastname</label>
+                <input type="text" name="lastname" id="lastname">
+              </p>
+              <p>
+                <label>Email Address</label>
+                <input type="email" name="email" id="email" required>
+              </p>
+              <p>
+                <label>Phone Number</label>
+                <input type="text" name="phone" id="phone">
+              </p>
+              <p class="full">
+                <label>Message</label>
+                <textarea name="message" rows="5" id="message"></textarea>
+              </p>
+              <p class="full">
+                <button type="submit">Submit</button>
+              </p>
+            </form>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  <footer class="w3-container w3-padding-32 w3-light-grey w3-center">
+    <h4>Footer</h4>
+    <a href="#" class="w3-button w3-black w3-margin"><i class="fa fa-arrow-up w3-margin-right"></i>To the top</a>
+    <div class="w3-xlarge w3-section">
+      <i class="fa fa-facebook-official w3-hover-opacity"></i>
+      <i class="fa fa-instagram w3-hover-opacity"></i>
+      <i class="fa fa-snapchat w3-hover-opacity"></i>
+      <i class="fa fa-pinterest-p w3-hover-opacity"></i>
+      <i class="fa fa-twitter w3-hover-opacity"></i>
+      <i class="fa fa-linkedin w3-hover-opacity"></i>
+    </div>
+  </footer>
+
+<script>
+// Get the Sidebar
+var mySidebar = document.getElementById("mySidebar");
+
+// Get the DIV with overlay effect
+var overlayBg = document.getElementById("myOverlay");
+
+// Toggle between showing and hiding the sidebar, and add overlay effect
+function w3_open() {
+  if (mySidebar.style.display === 'block') {
+    mySidebar.style.display = 'none';
+    overlayBg.style.display = "none";
+  } else {
+    mySidebar.style.display = 'block';
+    overlayBg.style.display = "block";
+  }
+}
+
+// Close the sidebar with the close button
+function w3_close() {
+  mySidebar.style.display = "none";
+  overlayBg.style.display = "none";
+}
+</script>
+
+<script>
+  var slideIndex = 1;
+showDivs(slideIndex);
+
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function currentDiv(n) {
+  showDivs(slideIndex = n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demodots");
+  if (n > x.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = x.length} ;
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" w3-white", "");
+  }
+  x[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " w3-white";
+}
+</script>
+
+ <!-- The core Firebase JS SDK is always required and must be listed first -->
+ <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+
+ <!-- TODO: Add SDKs for Firebase products that you want to use
+      https://firebase.google.com/docs/web/setup#available-libraries -->
+ <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+ <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+
+<script src="firebase.js"></script>
+<script src="homepage.js"></script>
+<script src="logOut.js"></script>
+</body>
+</html>
